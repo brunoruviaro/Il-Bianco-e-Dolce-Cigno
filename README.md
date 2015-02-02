@@ -30,13 +30,34 @@ Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electro
 
 In other words:
 
-*loop0* (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Code:
+**loop0** (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Code:
 
     Splay.ar(SoundIn.ar([0, 1, 2, 3, 4, 5, 6, 7]));
 
-*loop1* (mono) receives sound from altos 1 & 2 (microphones 3 & 4):
+**loop1** (mono) receives sound from altos (microphones 3 & 4):
 
     Mix(SoundIn.ar([2, 3]);
+
+**loop2** (mono) receives sound from tenors (microphones 5 & 6):
+
+    Mix(SoundIn.ar([4, 5]);
+
+**loop3** (mono) receives sound from basses (microphones 7 & 8):
+
+    Mix(SoundIn.ar([6, 7]);
+
+**loop4** (mono) receives sound from altos again (microphones 3 & 4):
+
+    Mix(SoundIn.ar([2, 3]);
+
+**loop5** (mono) receives sound from tenors again (microphones 5 & 6):
+
+    Mix(SoundIn.ar([4, 5]);
+
+**loop6** (mono) receives sound from sopranos (microphones 1 & 2):
+
+    Mix(SoundIn.ar([0, 1]);
+
 
 SuperCollider busses:
 
