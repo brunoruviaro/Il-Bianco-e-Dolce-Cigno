@@ -59,16 +59,10 @@ In other words:
     Mix(SoundIn.ar([0, 1]);
 
 
-SuperCollider busses:
 
-SoundIn.ar(0)
-SoundIn.ar(1)
-SoundIn.ar(2)
-SoundIn.ar(3)
-SoundIn.ar(4)
-SoundIn.ar(5)
-SoundIn.ar(6)
-SoundIn.ar(7)
+
+
+
 
     <output>sooperlooper:common_out_1</output>
     <input>calf:reverb_in_l</input>
