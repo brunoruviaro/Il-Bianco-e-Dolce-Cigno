@@ -7,6 +7,7 @@
 
 // MIDIDefs
 
+// REC for all loops
 MIDIdef.noteOn(\loopRec, {arg val, note;
 	var loopNumber = case
 	{note==48} {0}
@@ -25,7 +26,7 @@ MIDIdef.noteOn(\loopRec, {arg val, note;
 
 	{ ~loopRecState[loopNumber]==1 }
 	{ ~stopRecording.value(loopNumber) };
-},
+	},
 	// for recording, listen only for the following MIDI notes:
 	noteNum: [48, 53, 55, 57, 60, 62, 65]
 ); // end of MIDIdef loopRec
@@ -33,6 +34,7 @@ MIDIdef.noteOn(\loopRec, {arg val, note;
 // A variable to keep state of pause:
 ~loop0pause = 0;
 
+// PAUSE for loop0 only
 MIDIdef.noteOn(\loop0pause, {
 	// Pause pressed while loop0 is recording?
 	// stop recording, do nothing else.
@@ -61,9 +63,10 @@ MIDIdef.noteOn(\loop0pause, {
 		~loop0pause = 0;
 		"UNPAUSE".postln;
 	}; // end case
-},
+	},
 	noteNum: 49); // end of MIDIdef loop0pause
 
+// ONCE for loop0 only
 MIDIdef.noteOn(\loop0once, {
 	// ONCE pressed while loop0 is recording?
 	// stop recording.
@@ -77,9 +80,64 @@ MIDIdef.noteOn(\loop0once, {
 	~loopSynth[0] = Synth("playStereo", [
 		\dur, ~loopRecTime[0],
 		\amp, 1 ],
-	target: ~loopGroup);
+		target: ~loopGroup);
 	},
-	noteNum: [50, 51]); // end of MIDIdef loop0once (also D# to mimic SooperLooper)
+	noteNum: [50, 51]);
+// end of MIDIdef loop0once (also D# to mimic SooperLooper)
+
+
+
+// Synth playDelays:
+// Sharp keys trigger playback with delay line for mono loops
+MIDIdef.noteOn(\onces, {arg vel, note;
+	var loopNumber;
+	case
+	{note==54} { loopNumber = 1 }
+	{note==56} { loopNumber = 2 }
+	{note==58} { loopNumber = 3 }
+	{note==61} { loopNumber = 4 }
+	{note==63} { loopNumber = 5 }
+	{note==66} { loopNumber = 6 };
+
+	Synth("playDelay", [
+		\bufnum, ~buffers[loopNumber],
+		\delayTime, rrand(3, 8),
+		\decayTime, vel.linlin(0, 127, 15, 40),
+		\amp, vel/127
+	], target: ~loopGroup);
+
+	"looping!".postln;
+	},
+	noteNum: [54, 56, 58, 61, 63, 66]; // only listen to these
+);
+// End of playDelays
+
+
+// Input level of loop0 input bus (stereo mix of all mics)
+// This is for the smooth sustained chord moment
+MIDIdef.cc(\loop0inVolume, {arg val;
+	~stereoLoopInputBusVolume.value = val/127;
+	},
+	ccNum: 11
+);
+
+// Stereo Loop master volume output:
+MIDIdef.cc(\monoLoopsOutVolume, {arg val;
+	~stereoLoopMasterOutVolume.value = val/127;
+	"principal".postln;
+	},
+	ccNum: 17
+);
+
+// Mono Loops master volume output:
+MIDIdef.cc(\monoLoopsOutVolume, {arg val;
+	~monoLoopsMasterOutVolume.value = val/127;
+	"monoloops".postln;
+	},
+	ccNum: 18
+);
+
+
 
 
 // Play silent higher notes just to test MIDI connection
@@ -101,5 +159,5 @@ MIDIdef.noteOn(\test, {arg val, note;
 
 
 "End of MIDIdefs file; play a key between G5-C6 for a silent test.".postln;
- // end of MIDI block
+// end of MIDI block
 

@@ -28,6 +28,11 @@ s.waitForBoot({
 
 		s.sync;
 
+		// Create control busses for sub master volumes
+		~monoLoopsMasterOutVolume = Bus.control(s, 1).set(1.0);
+		~stereoLoopMasterOutVolume = Bus.control(s, 1).set(1.0);
+		~stereoLoopInputBusVolume = Bus.control(s, 1).set(0.5);
+
 		// Create busses to mix mic inputs
 		// First bus is stereo
 		// Remaining 6 are mono
@@ -36,7 +41,12 @@ s.waitForBoot({
 			{ Bus.audio(s, 1) }.dup(6)).flat;
 
 		// To feed loop0
-		{ Out.ar(~micMix[0], Splay.ar(SoundIn.ar((0..7)))) }.play(~micGroup);
+		{
+			Out.ar(
+				~micMix[0],
+				Splay.ar(SoundIn.ar((0..7)))
+				* In.kr(~stereoLoopInputBusVolume))
+		}.play(~micGroup);
 
 		// To feed loop1
 		{
@@ -84,15 +94,38 @@ s.waitForBoot({
 				loop: 0);
 		}).add;
 
-		SynthDef("playMono", { arg amp = 1, bufnum = 1, dur = 1;
-			var snd, env, att, rel, sus;
+		SynthDef("playDelay", {arg bufnum = 1, dur = 1, delayTime = 4, decayTime = 10, amp = 0.9, pos = 0;
+			var source, envSource, snd, env, att, rel, sus;
+			// source for delay line
 			att = 0.05;
 			rel = 0.1;
 			sus = dur - att - rel;
-			env = Env.linen(att, sus, rel, amp).kr(2);
-			snd = PlayBuf.ar(1, 0) * env;
-			Out.ar(0, [snd, snd]);
+			envSource = Env.linen(att, sus, rel, amp).kr;
+			source = PlayBuf.ar(1, bufnum) * envSource;
+			// delay line
+			snd = source + CombN.ar(
+				in: source,
+				maxdelaytime: 10,
+				delaytime: delayTime,
+				decaytime: decayTime
+			);
+			// global amp env, and panning
+			env = Line.kr(amp, 0, decayTime + 1, doneAction: 2);
+			snd = Pan2.ar(snd, pos);
+			// submaster (from MIDI slider)
+			snd = snd * In.kr(~monoLoopsMasterOutVolume);
+			Out.ar(0, snd);
 		}).add;
+
+		/*		SynthDef("playMono", { arg amp = 1, bufnum = 1, dur = 1;
+		var snd, env, att, rel, sus;
+		att = 0.05;
+		rel = 0.1;
+		sus = dur - att - rel;
+		env = Env.linen(att, sus, rel, amp).kr(2);
+		snd = PlayBuf.ar(1, 0) * env;
+		Out.ar(0, [snd, snd]);
+		}).add;*/
 
 		SynthDef("playStereo", { arg amp = 1, dur = 1, pause = 1, freeMe = 1;
 			var snd, env, att, rel, sus, pauseEnv, freeMeEnv;
@@ -105,6 +138,7 @@ s.waitForBoot({
 			sus = dur - att - rel;
 			env = Env.linen(att, sus, rel, amp).kr;
 			snd = PlayBuf.ar(2, ~buffers[0]) * env * pauseEnv * freeMeEnv;
+			snd = snd * In.kr(~stereoLoopMasterOutVolume);
 			Out.ar(0, snd);
 		}).add;
 
