@@ -2,6 +2,8 @@
 Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electronics by Bruno Ruviaro.
 
 
+## Microphones Routing
+
 | Microphone | SuperCollider Input |
 | ---------- | ------------------- |
 | Mic 1 (soprano 1) | SoundIn.ar(0) |
@@ -13,24 +15,28 @@ Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electro
 | Mic 7 (bass 1) | SoundIn.ar(6) |
 | Mic 8 (bass 2) | SoundIn.ar(7) |
 
+## SuperCollider internal routing
 
-
-SuperCollider internal routing (inBus to loops):
-
-SoundIn.ar(0) feeds loop6 (mono), loop0 (left)
-SoundIn.ar(1) feeds loop6 (mono), loop0 (left)
-SoundIn.ar(2) feeds loop1 (mono), loop4 (mono), loop0 (left)
-SoundIn.ar(3) feeds loop1 (mono), loop4 (mono), loop0 (left)
-SoundIn.ar(4) feeds loop2 (mono), loop5 (mono), loop0 (right)
-SoundIn.ar(5) feeds loop2 (mono), loop5 (mono), loop0 (right)
-SoundIn.ar(6) feeds loop3 (mono), loop0 (right)
-SoundIn.ar(7) feeds loop3 (mono), loop0 (right)
+| Input Bus | Loop(s) |
+| --------- | ------- |
+| SoundIn.ar(0) | feeds loop6 (mono), loop0 (left) |
+| SoundIn.ar(1) | feeds loop6 (mono), loop0 (left) |
+| SoundIn.ar(2) | feeds loop1 (mono), loop4 (mono), loop0 (left) |
+| SoundIn.ar(3) | feeds loop1 (mono), loop4 (mono), loop0 (left) |
+| SoundIn.ar(4) | feeds loop2 (mono), loop5 (mono), loop0 (right) |
+| SoundIn.ar(5) | feeds loop2 (mono), loop5 (mono), loop0 (right) |
+| SoundIn.ar(6) | feeds loop3 (mono), loop0 (right) |
+| SoundIn.ar(7) | feeds loop3 (mono), loop0 (right) |
 
 In other words:
 
-loop0 (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Code:
+*loop0* (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Code:
 
-Splay.ar(SoundIn.ar([0, 1, 2, 3, 4, 5, 6, 7]))
+    Splay.ar(SoundIn.ar([0, 1, 2, 3, 4, 5, 6, 7]));
+
+*loop1* (mono) receives sound from altos 1 & 2 (microphones 3 & 4):
+
+    Mix(SoundIn.ar([2, 3]);
 
 SuperCollider busses:
 
