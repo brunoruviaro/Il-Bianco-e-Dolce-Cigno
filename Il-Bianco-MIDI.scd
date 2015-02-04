@@ -116,18 +116,19 @@ MIDIdef.noteOn(\onces, {arg vel, note;
 
 // Input level of loop0 input bus (stereo mix of all mics)
 // This is for the smooth sustained chord moment
+// cc numbers right now match Scot's MIDI controller knobs
 MIDIdef.cc(\loop0inVolume, {arg val;
 	~stereoLoopInputBusVolume.value = val/127;
 	},
-	ccNum: 11
+	ccNum: 73 // knob 1
 );
 
 // Stereo Loop master volume output:
-MIDIdef.cc(\monoLoopsOutVolume, {arg val;
+MIDIdef.cc(\stereoLoopOutVolume, {arg val;
 	~stereoLoopMasterOutVolume.value = val/127;
 	"principal".postln;
 	},
-	ccNum: 17
+	ccNum: 17 // knob 8
 );
 
 // Mono Loops master volume output:
@@ -135,7 +136,7 @@ MIDIdef.cc(\monoLoopsOutVolume, {arg val;
 	~monoLoopsMasterOutVolume.value = val/127;
 	"monoloops".postln;
 	},
-	ccNum: 18
+	ccNum: 14 // knob 7
 );
 
 
