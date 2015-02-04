@@ -4,11 +4,14 @@ Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electro
 
 TO-DO
 
-* overdub functionality
+* overdub functionality (if it works, remove MIDI control of input volume)
 * overdub MIDI key
 * (fix trig?)
 * remove s.plotTree from Player file
 * do not add reverb built-into the patch
+* update PDFs score and midi mappings to include in repo
+* Make a nice clean version of Jeff's drawing (hardware connections diagram)
+* include jmess in repo
 
 ## Microphones Routing
 
