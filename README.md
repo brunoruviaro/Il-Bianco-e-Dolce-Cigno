@@ -12,6 +12,7 @@ TO-DO
 * update PDFs score and midi mappings to include in repo
 * Make a nice clean version of Jeff's drawing (hardware connections diagram)
 * include jmess in repo
+* Explain where to change MIDI knob mappings for use of a different keyboard (and/or tell which numbers we are using so anyone could change their keyboard to use those numbers)
 
 ## Microphones Routing
 
