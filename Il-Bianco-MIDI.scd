@@ -103,7 +103,8 @@ MIDIdef.noteOn(\onces, {arg vel, note;
 		\bufnum, ~buffers[loopNumber],
 		\delayTime, rrand(3, 8),
 		\decayTime, vel.linlin(0, 127, 15, 40),
-		\amp, vel/127
+		\amp, vel/127,
+		\dur, ~loopRecTime[loopNumber],
 	], target: ~loopGroup);
 
 	"looping!".postln;
