@@ -2,7 +2,7 @@
 Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electronics by Bruno Ruviaro.
 
 
-TO-DO
+Ta-daaaa!
 
 * overdub functionality (if it works, remove MIDI control of input volume)
 * overdub MIDI key
