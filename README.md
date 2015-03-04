@@ -6,7 +6,7 @@ To-do:
 * update PDFs score and midi mappings to include in repo
 * Make a nice clean version of Jeff's drawing (hardware connections diagram)
 
-## About This Piece
+## About this piece
 
 Check out the score (PDF here -- add link).
 Check out these pictures:
@@ -17,7 +17,17 @@ Check out this video recording:
 * 8 condenser microphones
 * 1 eight-channel audio interface (PreSonus 1818 VSL USB)
 * 1 Linux laptop running SuperCollider 3.6.6
+* 1 USB MIDI keyboard controller (Alesis Q25)
 * 1 small mixer
+
+## How to run the piece
+
+Assuming everything is connected,
+
+* Open the SuperCollider IDE
+* Open the file Il-Bianco-Player.scd
+* Run it line by line (put cursor on a line, hit Control+Enter)
+* Follow along with the score.
 
 ## MIDI mapping
 
@@ -30,7 +40,7 @@ One of your faders/knobs (called stereoLoopOutVolume) will control the playback 
 
 Use the file Il-Bianco-MIDI-CC-Numbers.scd to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard. Then open the file Il-Bianco-MIDI.scd and change the relevant lines (line numbers 154 and 162) to reflect the CC numbers of the desired knob/faders.
 
-## Microphones Routing
+## Microphones routing
 
 | Microphone | SuperCollider Input |
 | ---------- | ------------------- |
@@ -86,92 +96,3 @@ In other words:
 
     Mix(SoundIn.ar([0, 1]);
 
-
-
-* Explain where to change MIDI knob mappings for use of a different keyboard (and/or tell which numbers we are using so anyone could change their keyboard to use those numbers)
-
-
-
-
-    <output>sooperlooper:common_out_1</output>
-    <input>calf:reverb_in_l</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:common_out_2</output>
-    <input>calf:reverb_in_r</input>
-  </connection>
-
-
-<connection>
-    <output>sooperlooper:loop1_out_1</output>
-    <input>SuperCollider:in_1</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:loop2_out_1</output>
-    <input>SuperCollider:in_2</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:loop3_out_1</output>
-    <input>SuperCollider:in_3</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:loop4_out_1</output>
-    <input>SuperCollider:in_4</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:loop5_out_1</output>
-    <input>SuperCollider:in_5</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:loop6_out_1</output>
-    <input>SuperCollider:in_6</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:loop7_out_1</output>
-    <input>system:playback_1</input>
-  </connection>
-  <connection>
-    <output>sooperlooper:loop7_out_2</output>
-    <input>system:playback_2</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_1</output>
-    <input>system:playback_1</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_2</output>
-    <input>system:playback_2</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_3</output>
-    <input>system:playback_3</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_4</output>
-    <input>system:playback_4</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_5</output>
-    <input>system:playback_5</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_6</output>
-    <input>system:playback_6</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_7</output>
-    <input>system:playback_7</input>
-  </connection>
-  <connection>
-    <output>SuperCollider:out_8</output>
-    <input>system:playback_8</input>
-  </connection>
-  <connection>
-    <output>calf:reverb_out_l</output>
-    <input>system:playback_1</input>
-  </connection>
-  <connection>
-    <output>calf:reverb_out_r</output>
-    <input>system:playback_2</input>
-  </connection>
-</jmess>

@@ -1,5 +1,5 @@
 // =============================== //
-// Il Bianco e dolce cigno SET UP
+// Il Bianco e Dolce Cigno
 // SCU Chamber Singers
 // Premiere on January 29, 2015 with SooperLooper system
 // Ported to SuperCollider-only in February
@@ -8,10 +8,6 @@
 
 // Connect SuperCollider MIDI:
 MIDIIn.connectAll;
-
-// Assignment of knob/fader numbers for volumes control
-~stereoLoopMasterOutVolumeCCnumber = 17 // knob 8
-~monoLoopsMasterOutVolumeCCnum = 14 // knob 7
 
 // Load SuperCollider files one at a time:
 "Il-Bianco-Functions.scd".loadRelative;
