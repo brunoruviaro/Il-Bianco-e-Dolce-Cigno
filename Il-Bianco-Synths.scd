@@ -16,11 +16,14 @@ s.waitForBoot({
 
 	{
 		// Allocate one buffer per loop (generous max dur of 12 sec);
-		// First buffer is stereo;
-		// Six remaining buffers are mono.
+		// First buffer is stereo; ~buffers(0)
+		// Six following buffers are mono. ~buffers(1..6)
+		// Last buffer is stereo (for overdub only) ~buffer(7)
 		~buffers = Array.with(
 			Buffer.alloc(s, 44100 * 12, 2),
-			{ Buffer.alloc(s, 44100 * 12, 1) }.dup(6)).flat;
+			{ Buffer.alloc(s, 44100 * 12, 1) }.dup(6),
+			Buffer.alloc(s, 44100 * 3, 2), // shorter buffer for overdub
+		).flat;
 
 		// Groups
 		~micGroup = Group.new;
@@ -40,7 +43,7 @@ s.waitForBoot({
 			Bus.audio(s, 2),
 			{ Bus.audio(s, 1) }.dup(6)).flat;
 
-		// To feed loop0
+		// To feed loop0 (also loop7 - overdub)
 		{
 			Out.ar(
 				~micMix[0],
@@ -77,7 +80,6 @@ s.waitForBoot({
 		{
 			Out.ar(~micMix[6], Mix(SoundIn.ar([0, 1])))
 		}.play(~micGroup);
-
 
 
 		SynthDef("recMono", { arg inbus, bufnum;
