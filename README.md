@@ -4,14 +4,9 @@ Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electro
 
 Ta-daaaa!
 
-* overdub functionality (if it works, remove MIDI control of input volume)
-* overdub MIDI key
-* (fix trig?)
-* remove s.plotTree from Player file
-* do not add reverb built-into the patch
+* remove MIDI control of input volume)
 * update PDFs score and midi mappings to include in repo
 * Make a nice clean version of Jeff's drawing (hardware connections diagram)
-* include jmess in repo
 * Explain where to change MIDI knob mappings for use of a different keyboard (and/or tell which numbers we are using so anyone could change their keyboard to use those numbers)
 
 ## Microphones Routing
@@ -42,7 +37,7 @@ Ta-daaaa!
 
 In other words:
 
-**loop0** (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Code:
+**loop0** and **loop7** (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Loop 7 is for overdub section (bar 52). Code:
 
     Splay.ar(SoundIn.ar([0, 1, 2, 3, 4, 5, 6, 7]));
 
