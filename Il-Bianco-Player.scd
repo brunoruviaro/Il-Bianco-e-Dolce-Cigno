@@ -11,7 +11,7 @@ MIDIIn.connectAll;
 
 // Load SuperCollider files one at a time:
 "Il-Bianco-Functions.scd".loadRelative;
-"Il-Bianco-MIDI-CC-Numbers.scd".loadRelative;"Il-Bianco-MIDI.scd".loadRelative;
+"Il-Bianco-MIDI.scd".loadRelative;
 "Il-Bianco-Synths.scd".loadRelative;
 
 // Linux Only: reset Jack AUDIO Connections with jmess:
