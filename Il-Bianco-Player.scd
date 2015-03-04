@@ -17,7 +17,7 @@ s.plotTree
 
 // Jack AUDIO Connections with jmess (Linux only)
 "jmess -D".unixCmd; // disconnect all audio (clean up)
-"jmess --connect ~/Music/SuperCollider/Il-Bianco-e-Dolce-Cigno/chamber-singers-v4-jmess.xml".unixCmd;
+"jmess --connect ~/Music/SuperCollider/Il-Bianco-e-Dolce-Cigno/il-bianco-jmess-connections.xml".unixCmd;
 
 // Go to Catia or Qjackctl to verify connections
 // Use Ctrl+R to refresh Catia
