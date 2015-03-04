@@ -9,12 +9,16 @@
 // Connect SuperCollider MIDI:
 MIDIIn.connectAll;
 
+// Assignment of knob/fader numbers for volumes control
+~stereoLoopMasterOutVolumeCCnumber = 17 // knob 8
+~monoLoopsMasterOutVolumeCCnum = 14 // knob 7
+
 // Load SuperCollider files one at a time:
 "Il-Bianco-Functions.scd".loadRelative;
-"Il-Bianco-MIDI.scd".loadRelative;
+"Il-Bianco-MIDI-CC-Numbers.scd".loadRelative;"Il-Bianco-MIDI.scd".loadRelative;
 "Il-Bianco-Synths.scd".loadRelative;
 
-// Jack AUDIO Connections with jmess (Linux only):
+// Linux Only: reset Jack AUDIO Connections with jmess:
 "jmess -D".unixCmd; // disconnect all audio (clean up)
 "jmess --connect ~/Music/SuperCollider/Il-Bianco-e-Dolce-Cigno/il-bianco-jmess-connections.xml".unixCmd;
 
