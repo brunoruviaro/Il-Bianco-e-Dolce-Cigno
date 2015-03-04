@@ -1,13 +1,34 @@
 # Il-Bianco-e-Dolce-Cigno
 Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electronics by Bruno Ruviaro.
 
+To-do:
 
-Ta-daaaa!
-
-* remove MIDI control of input volume)
 * update PDFs score and midi mappings to include in repo
 * Make a nice clean version of Jeff's drawing (hardware connections diagram)
-* Explain where to change MIDI knob mappings for use of a different keyboard (and/or tell which numbers we are using so anyone could change their keyboard to use those numbers)
+
+## About This Piece
+
+Check out the score (PDF here -- add link).
+Check out these pictures:
+Check out this video recording:
+
+## Equipment we used in 2015
+
+* 8 condenser microphones
+* 1 eight-channel audio interface (PreSonus 1818 VSL USB)
+* 1 Linux laptop running SuperCollider 3.6.6
+* 1 small mixer
+
+## MIDI mapping
+
+You need a standard MIDI keyboard with at least two octaves available.
+The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. Midinotes between 67 and 72 can be used for silent MIDI testing just before performance.
+
+In addition, your MIDI keyboard should have two knobs or faders availables for volume control.
+
+One of your faders/knobs (called stereoLoopOutVolume) will control the playback volume of all playback events except for the aleatoric section starting in m. 69. The other fader/knob (called monoLoopOutVolume) will control the playback volume of the loops in the aleatoric section (mm. 69-86).
+
+Use the file Il-Bianco-MIDI-CC-Numbers.scd to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard. Then open the file Il-Bianco-MIDI.scd and change the relevant lines (line numbers 154 and 162) to reflect the CC numbers of the desired knob/faders.
 
 ## Microphones Routing
 
@@ -67,6 +88,7 @@ In other words:
 
 
 
+* Explain where to change MIDI knob mappings for use of a different keyboard (and/or tell which numbers we are using so anyone could change their keyboard to use those numbers)
 
 
 
