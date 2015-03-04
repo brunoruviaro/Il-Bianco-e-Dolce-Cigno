@@ -117,6 +117,7 @@ s.waitForBoot({
 			// playEnv = Env.new([0, 1, 1, 0], [3, 20, 9]).kr(doneAction: 2);
 
 			snd = PlayBuf.ar(2, ~buffers[7], loop: 1) * playEnv;
+			snd = snd * In.kr(~stereoLoopMasterOutVolume);
 			Out.ar(0, snd);
 		}).add;
 

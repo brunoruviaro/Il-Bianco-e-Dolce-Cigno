@@ -140,7 +140,7 @@ MIDIdef.noteOn(\onces, {arg vel, note;
 		\dur, ~loopRecTime[loopNumber],
 	], target: ~loopGroup);
 
-	"looping!".postln;
+	[note, "looping!"].postln;
 	},
 	noteNum: [54, 56, 58, 61, 63, 66]; // only listen to these
 );
@@ -149,7 +149,7 @@ MIDIdef.noteOn(\onces, {arg vel, note;
 // Stereo Loop master volume output:
 MIDIdef.cc(\stereoLoopOutVolume, {arg val;
 	~stereoLoopMasterOutVolume.value = val/127;
-	"principal".postln;
+	"[main volume, val]".postln;
 	},
 	ccNum: 7;
 );
@@ -157,7 +157,7 @@ MIDIdef.cc(\stereoLoopOutVolume, {arg val;
 // Mono Loops master volume output:
 MIDIdef.cc(\monoLoopsOutVolume, {arg val;
 	~monoLoopsMasterOutVolume.value = val/127;
-	"monoloops".postln;
+	["aleatoric loops volume", val].postln;
 	},
 	ccNum: 1;
 );
