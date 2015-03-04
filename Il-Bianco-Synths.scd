@@ -9,7 +9,7 @@
 
 o = Server.local.options;
 o.memSize;
-o.memSize = 409600;
+o.memSize = 819200;
 o.memSize; // verify
 
 s.waitForBoot({
@@ -95,6 +95,33 @@ s.waitForBoot({
 				bufnum: ~buffers[0], // this synth for buffer 0 only
 				loop: 0);
 		}).add;
+
+
+		SynthDef("recStereoOverdub", { arg gate = 1;
+
+			var recFade = Env.new([0, 1, 1, 0], [2, 6, 3]).kr;
+			var snd, playEnv;
+
+			RecordBuf.ar(
+				inputArray: In.ar(~micMix[0], 2) * recFade,
+				bufnum: ~buffers[7], // shorter buffer for overdub part
+				recLevel: recFade,
+				preLevel: 0.9,
+				run: 1, //(1 - Done.kr(recFade)).poll, // turn rec off when recFade ends
+				loop: 1);
+
+			// this playEnv expects a manual release message
+			playEnv = Env.asr(3, 1, 9).kr(doneAction: 2, gate: gate);
+
+			// this playEnv does it all automatically (fixed times)
+			// playEnv = Env.new([0, 1, 1, 0], [3, 20, 9]).kr(doneAction: 2);
+
+			snd = PlayBuf.ar(2, ~buffers[7], loop: 1) * playEnv;
+			Out.ar(0, snd);
+		}).add;
+
+
+
 
 		SynthDef("playDelay", {arg bufnum = 1, dur = 1, delayTime = 4, decayTime = 10, amp = 0.9, pos = 0;
 			var source, envSource, snd, env, att, rel, sus;

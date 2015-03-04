@@ -87,6 +87,41 @@ MIDIdef.noteOn(\loop0once, {
 
 
 
+
+
+// OVERDUB key
+
+~overdubOnOff = 0;
+~overdubNode = nil;
+
+MIDIdef.noteOn(\overdub, {
+	// E natural (midi 52) triggers the overdub moment.
+	// All happens automatically in the Synth:
+	// start overdub synth, fadeIn input volume,
+	// start playback soon after, stop overdub, stop playback, etc.
+	// This MIDIdef starts the synth if it was off;
+	// or frees the synth if it was running.
+
+	if(~overdubOnOff==0,
+		{
+			~overdubNode = Synth("recStereoOverdub", target: ~loopGroup);
+			~overdubOnOff = 1;
+			"Starting rec overdub...".postln;
+		},
+		{
+			~overdubNode.release;
+			~overdubOnOff = 0;
+			"Overdubbed note released".postln;
+		}
+	);
+	},
+	noteNum: 52);
+// end of MIDIdef overdub
+
+
+
+
+
 // Synth playDelays:
 // Sharp keys trigger playback with delay line for mono loops
 MIDIdef.noteOn(\onces, {arg vel, note;
