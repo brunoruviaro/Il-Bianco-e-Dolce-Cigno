@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Il Bianco e Dolce Cigno : Piece for choir and live looping by Scot Hanna-Weir (based on Jacques Arcadelt). Electronics by Bruno Ruviaro.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Il Bianco e Dolce Cigno</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno">View on GitHub</a>
+
+          <h1 id="project_title">Il Bianco e Dolce Cigno</h1>
+          <h2 id="project_tagline">Piece for choir and live looping by Scot Hanna-Weir (based on Jacques Arcadelt). Electronics by Bruno Ruviaro.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="about-this-piece" class="anchor" href="#about-this-piece" aria-hidden="true"><span class="octicon octicon-link"></span></a>About this piece</h2>
+
+<p>Check out the score (PDF here -- add link).
+Check out these pictures:
+Check out this video recording:</p>
+
+<h2>
+<a id="equipment-we-used-in-2015" class="anchor" href="#equipment-we-used-in-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Equipment we used in 2015</h2>
+
+<ul>
+<li>8 condenser microphones</li>
+<li>1 eight-channel audio interface (PreSonus 1818 VSL USB)</li>
+<li>1 Linux laptop running SuperCollider 3.6.6</li>
+<li>1 USB MIDI keyboard controller (Alesis Q25)</li>
+<li>1 small mixer</li>
+</ul>
+
+<h2>
+<a id="how-to-run-the-piece" class="anchor" href="#how-to-run-the-piece" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to run the piece</h2>
+
+<p>Assuming everything is connected,</p>
+
+<ul>
+<li>Open the SuperCollider IDE</li>
+<li>Open the file Il-Bianco-Player.scd</li>
+<li>Run it line by line (put cursor on a line, hit Control+Enter)</li>
+<li>Follow along with the score.</li>
+</ul>
+
+<h2>
+<a id="midi-mapping" class="anchor" href="#midi-mapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>MIDI mapping</h2>
+
+<p>You need a standard MIDI keyboard with at least two octaves available.
+The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. Midinotes between 67 and 72 can be used for silent MIDI testing just before performance.</p>
+
+<p>In addition, your MIDI keyboard should have two knobs or faders availables for volume control.</p>
+
+<p>One of your faders/knobs (called stereoLoopOutVolume) will control the playback volume of all playback events except for the aleatoric section starting in m. 69. The other fader/knob (called monoLoopOutVolume) will control the playback volume of the loops in the aleatoric section (mm. 69-86).</p>
+
+<p>Use the file Il-Bianco-MIDI-CC-Numbers.scd to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard. Then open the file Il-Bianco-MIDI.scd and change the relevant lines (line numbers 154 and 162) to reflect the CC numbers of the desired knob/faders.</p>
+
+<h2>
+<a id="microphones-routing" class="anchor" href="#microphones-routing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Microphones routing</h2>
+
+<table>
+<thead>
+<tr>
+<th>Microphone</th>
+<th>SuperCollider Input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mic 1 (soprano 1)</td>
+<td>SoundIn.ar(0)</td>
+</tr>
+<tr>
+<td>Mic 2 (soprano 2)</td>
+<td>SoundIn.ar(1)</td>
+</tr>
+<tr>
+<td>Mic 3 (alto 1)</td>
+<td>SoundIn.ar(2)</td>
+</tr>
+<tr>
+<td>Mic 4 (alto 2)</td>
+<td>SoundIn.ar(3)</td>
+</tr>
+<tr>
+<td>Mic 5 (tenor 1)</td>
+<td>SoundIn.ar(4)</td>
+</tr>
+<tr>
+<td>Mic 6 (tenor 2)</td>
+<td>SoundIn.ar(5)</td>
+</tr>
+<tr>
+<td>Mic 7 (bass 1)</td>
+<td>SoundIn.ar(6)</td>
+</tr>
+<tr>
+<td>Mic 8 (bass 2)</td>
+<td>SoundIn.ar(7)</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="supercollider-internal-routing" class="anchor" href="#supercollider-internal-routing" aria-hidden="true"><span class="octicon octicon-link"></span></a>SuperCollider internal routing</h2>
+
+<table>
+<thead>
+<tr>
+<th>Input Bus</th>
+<th>Loop(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SoundIn.ar(0)</td>
+<td>feeds loop6 (mono), loop0 (left)</td>
+</tr>
+<tr>
+<td>SoundIn.ar(1)</td>
+<td>feeds loop6 (mono), loop0 (left)</td>
+</tr>
+<tr>
+<td>SoundIn.ar(2)</td>
+<td>feeds loop1 (mono), loop4 (mono), loop0 (left)</td>
+</tr>
+<tr>
+<td>SoundIn.ar(3)</td>
+<td>feeds loop1 (mono), loop4 (mono), loop0 (left)</td>
+</tr>
+<tr>
+<td>SoundIn.ar(4)</td>
+<td>feeds loop2 (mono), loop5 (mono), loop0 (right)</td>
+</tr>
+<tr>
+<td>SoundIn.ar(5)</td>
+<td>feeds loop2 (mono), loop5 (mono), loop0 (right)</td>
+</tr>
+<tr>
+<td>SoundIn.ar(6)</td>
+<td>feeds loop3 (mono), loop0 (right)</td>
+</tr>
+<tr>
+<td>SoundIn.ar(7)</td>
+<td>feeds loop3 (mono), loop0 (right)</td>
+</tr>
+</tbody>
+</table>
+
+<p>In other words:</p>
+
+<p><strong>loop0</strong> and <strong>loop7</strong> (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Loop 7 is for overdub section (bar 52). Code:</p>
+
+<pre><code>Splay.ar(SoundIn.ar([0, 1, 2, 3, 4, 5, 6, 7]));
+</code></pre>
+
+<p><strong>loop1</strong> (mono) receives sound from altos (microphones 3 &amp; 4):</p>
+
+<pre><code>Mix(SoundIn.ar([2, 3]);
+</code></pre>
+
+<p><strong>loop2</strong> (mono) receives sound from tenors (microphones 5 &amp; 6):</p>
+
+<pre><code>Mix(SoundIn.ar([4, 5]);
+</code></pre>
+
+<p><strong>loop3</strong> (mono) receives sound from basses (microphones 7 &amp; 8):</p>
+
+<pre><code>Mix(SoundIn.ar([6, 7]);
+</code></pre>
+
+<p><strong>loop4</strong> (mono) receives sound from altos again (microphones 3 &amp; 4):</p>
+
+<pre><code>Mix(SoundIn.ar([2, 3]);
+</code></pre>
+
+<p><strong>loop5</strong> (mono) receives sound from tenors again (microphones 5 &amp; 6):</p>
+
+<pre><code>Mix(SoundIn.ar([4, 5]);
+</code></pre>
+
+<p><strong>loop6</strong> (mono) receives sound from sopranos (microphones 1 &amp; 2):</p>
+
+<pre><code>Mix(SoundIn.ar([0, 1]);
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Il Bianco e Dolce Cigno maintained by <a href="https://github.com/brunoruviaro">brunoruviaro</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
