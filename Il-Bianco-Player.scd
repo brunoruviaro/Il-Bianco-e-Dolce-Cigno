@@ -14,12 +14,4 @@ MIDIIn.connectAll;
 "Il-Bianco-MIDI.scd".loadRelative;
 "Il-Bianco-Synths.scd".loadRelative;
 
-// Linux Only: reset Jack AUDIO Connections with jmess:
-"jmess -D".unixCmd; // disconnect all audio (clean up)
-"jmess --connect ~/Music/SuperCollider/Il-Bianco-e-Dolce-Cigno/il-bianco-jmess-connections.xml".unixCmd;
-
-// Linux only:
-// Go to Catia or Qjackctl to verify connections
-// Use Ctrl+R to refresh Catia
-
 // END
