@@ -149,7 +149,7 @@ MIDIdef.noteOn(\onces, {arg vel, note;
 // Stereo Loop master volume output:
 MIDIdef.cc(\stereoLoopOutVolume, {arg val;
 	~stereoLoopMasterOutVolume.value = val/127;
-	"[main volume, val]".postln;
+	["main volume", val].postln;
 	},
 	ccNum: 7;
 );
