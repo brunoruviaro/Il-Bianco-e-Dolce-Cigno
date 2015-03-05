@@ -66,7 +66,7 @@ This function calculates actually recorded time of a loop. Buffers are allocated
 			Synth("recMono", [
 				\inbus, ~micMix[loopNumber],
 				\bufnum, ~buffers[loopNumber]],
-			target: ~loopGroup)
+				target: ~loopGroup)
 		}
 	);
 
@@ -85,6 +85,8 @@ This function calculates actually recorded time of a loop. Buffers are allocated
 	~measureRecTime.value(loopNumber, 0);
 	// Stop rec synth
 	~loopSynth[loopNumber].free;
+	// Clean up array
+	~loopSynth[loopNumber] = nil;
 	// Post info
 	"REC STOP".postln;
 };

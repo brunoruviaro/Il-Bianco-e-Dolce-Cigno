@@ -66,15 +66,20 @@ MIDIdef.noteOn(\loop0pause, {
 
 // ONCE for loop0 only
 MIDIdef.noteOn(\loop0once, {
-	// ONCE pressed while loop0 is recording?
-	// stop recording.
-	//
-	// ONCE pressed while loop0 is playing?
-	// release it, restart from beginning.
+	// ONCE pressed while loop0 is recording or playing?
+	// stop recording or playing.
+	// Then play the loop right away.
 
-	if(~loopRecState[0]==1, { ~stopRecording.value(0) });
+	if(~loopSynth[0].notNil, // is it doing something? (playing or recording?)
+		{
+			if(~loopRecState[0]==1, // if recording...
+				{ ~stopRecording.value(0) }, // ...then stop recording
+				{ ~loopSynth[0].set(\freeMe, 0) } // ... else, stop playing
+			)
+		}
+	);
 
-	~loopSynth[0].set(\freeMe, 0); // stop and free node if it was playing
+	 // Now start playing from beginning:
 	~loopSynth[0] = Synth("playStereo", [
 		\dur, ~loopRecTime[0],
 		\amp, 1 ],
