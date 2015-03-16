@@ -26,7 +26,7 @@ The list below specifies what electronic equipment is needed to perform the piec
 * 8 cardioid condenser microphones
 * 1 eight-channel audio interface
 * 1 laptop running [SuperCollider](http://supercollider.sourceforge.net/downloads/)
-* 1 USB MIDI keyboard controller
+* 1 USB MIDI keyboard controller (with at least 2 octaves and 2 faders or knobs) 
 * 1 small mixer
 * 2 main loudspeakers (minimum)
 * 2 monitor speakers for choir
@@ -62,6 +62,8 @@ Hardware connections are as follows:
 * Mixer aux send connected to monitor speakers for the choir.
 
 In the premiere of this piece we actually used four loudspeakers for the audience: a stereo pair right in front of the conductor, and a mirror stereo pair placed on the far left and far right of the stage.
+
+![setup](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/il-bianco-set-up-diagram.png)
 
 ## SuperCollider code: technical details
 
