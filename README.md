@@ -55,6 +55,8 @@ Hardware connections are as follows:
 
 * Audio interface connected to computer via USB.
 
+* MIDI keyboard connected to computer via USB.
+
 * Audio interface stereo output connected to mixer.
 
 * Mixer main outs connected to loudspeakers.
