@@ -1,11 +1,12 @@
-# Il Bianco e Dolce Cigno... e Dolce Cigno
+# Il Bianco e Dolce Cigno... e Dolce Cigno...
 Piece for choir and live looping by Scot Hanna-Weir, electronics by Bruno Ruviaro.
 
 To-do:
 
-* update PDFs score and midi mappings to include in repo
-* Make a nice clean version of Jeff's drawing (hardware connections diagram)
-* specify license?
+* update PDFs score
+* Fix word in diagram (PreSonus insted of ProSonus).
+* Make a simplified version fo diagram (without snake; with 2 instead of 4 speakers)
+* specify licenses in section below (see "about this piece"). Code is GNU/GPL, score is Creative Commons?
 
 ## About this piece
 
