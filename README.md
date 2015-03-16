@@ -1,12 +1,8 @@
-# Il Bianco e Dolce Cigno... e Dolce Cigno...
-Piece for choir and live looping by Scot Hanna-Weir, electronics by Bruno Ruviaro.
+Piece for choir and live looping by Scot Hanna-Weir. Electronics by Bruno Ruviaro.
 
-To-do:
+## About this piece
 
-* update PDFs score
-* Fix word in diagram (PreSonus insted of ProSonus).
-* Make a simplified version fo diagram (without snake; with 2 instead of 4 speakers)
-* specify licenses in section below (see "about this piece"). Code is GNU/GPL, score is Creative Commons?
+*Il Bianco e Dolce Cigno... e Dolce Cigno...* is a composition for choir and live looping based on Jacques Arcadelt's madrigal *Il Bianco e Dolce Cigno*. The voices of the choir are recorded and played back live, in effect creating a second, virtual choir accompanying the real choir. One electronic musician triggers the electronic parts from a MIDI keyboard, following the score. Scot Hanna-Weir created the concept and composed the full score. Bruno Ruviaro realized the electronics. First performance was on January 29, 2015, at [Santa Clara University](http://www.scu.edu/music/). Scot conducted the SCU Chamber Singers, and Bruno performed the electronic part.
 
 ## About this piece
 
