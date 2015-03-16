@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Il Bianco e Dolce Cigno : Piece for choir and live looping by Scot Hanna-Weir (based on Jacques Arcadelt). Electronics by Bruno Ruviaro.">
+    <meta name="description" content="Il Bianco e Dolce Cigno... : ...e Dolce Cigno....">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Il Bianco e Dolce Cigno</title>
+    <title>Il Bianco e Dolce Cigno...</title>
   </head>
 
   <body>
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno">View on GitHub</a>
 
-          <h1 id="project_title">Il Bianco e Dolce Cigno</h1>
-          <h2 id="project_tagline">Piece for choir and live looping by Scot Hanna-Weir (based on Jacques Arcadelt). Electronics by Bruno Ruviaro.</h2>
+          <h1 id="project_title">Il Bianco e Dolce Cigno...</h1>
+          <h2 id="project_tagline">...e Dolce Cigno....</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/zipball/master">Download this project as a .zip file</a>
@@ -31,50 +31,136 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2>
+        <p>Piece for choir and live looping by Scot Hanna-Weir. Electronics by Bruno Ruviaro.</p>
+
+<h2>
 <a id="about-this-piece" class="anchor" href="#about-this-piece" aria-hidden="true"><span class="octicon octicon-link"></span></a>About this piece</h2>
 
-<p>Check out the score (PDF here -- add link).
-Check out these pictures:
-Check out this video recording:</p>
+<p>This is a composition for choir and live looping based on Jacques Arcadelt's madrigal <em>Il Bianco e Dolce Cigno</em>. The voices of the choir are recorded and played back live, in effect creating a second, virtual choir accompanying the real choir. One electronic musician triggers the electronic parts from a MIDI keyboard, following the score. Scot Hanna-Weir created the concept and composed the full score. Bruno Ruviaro realized the electronics. First performance was on January 29, 2015, at <a href="http://www.scu.edu/music/">Santa Clara University</a>. Scot conducted the SCU Chamber Singers, and Bruno performed the electronic part.</p>
+
+<p>Check out the score (PDF here -- add link).</p>
+
+<p>Check out these pictures:</p>
+
+<p>Check out this video recording:</p>
+
+<p>This page provides all the information needed to perform this piece. Score and electronic files are released under a XYZABC license ... ?</p>
 
 <h2>
-<a id="equipment-we-used-in-2015" class="anchor" href="#equipment-we-used-in-2015" aria-hidden="true"><span class="octicon octicon-link"></span></a>Equipment we used in 2015</h2>
+<a id="equipment" class="anchor" href="#equipment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Equipment</h2>
+
+<p>The list below specifies what electronic equipment is needed to perform the piece.  <a href="http://supercollider.sourceforge.net/downloads/">SuperCollider</a>, the software used for recording and playback, runs on all major platforms (Mac, Windows, Linux).</p>
 
 <ul>
-<li>8 condenser microphones</li>
-<li>1 eight-channel audio interface (PreSonus 1818 VSL USB)</li>
-<li>1 Linux laptop running SuperCollider 3.6.6</li>
-<li>1 USB MIDI keyboard controller (Alesis Q25)</li>
+<li>8 cardioid condenser microphones</li>
+<li>1 eight-channel audio interface</li>
+<li>1 laptop running <a href="http://supercollider.sourceforge.net/downloads/">SuperCollider</a>
+</li>
+<li>1 USB MIDI keyboard controller (with at least 2 octaves and 2 faders or knobs) </li>
 <li>1 small mixer</li>
+<li>2 main loudspeakers (minimum)</li>
+<li>2 monitor speakers for choir</li>
 </ul>
 
-<h2>
-<a id="how-to-run-the-piece" class="anchor" href="#how-to-run-the-piece" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to run the piece</h2>
+<p>These are the brands and models we used in concert (Winter 2015): PreSonus 1818 VSL USB Audio Interface; Dell laptop running Ubuntu Linux 14.04 and SuperCollider 3.6.6; Alesis Q25 MIDI Keyboard; Mackie Mixer 1202-VLZ3; three pairs of QSC K10 loudspeakers (one pair as monitors for choir, two stereo pairs as main PA system).</p>
 
-<p>Assuming everything is connected,</p>
+<p>You don't need to have the exact same equipment to run the piece; any good quality equivalent gear should work.</p>
+
+<h2>
+<a id="how-to-run-the-piece-overview" class="anchor" href="#how-to-run-the-piece-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to run the piece (overview)</h2>
+
+<p>Once everything is connected and working, the electronic musician follows these simple steps in order to perform the piece:</p>
 
 <ul>
 <li>Open the SuperCollider IDE</li>
 <li>Open the file Il-Bianco-Player.scd</li>
-<li>Run it line by line (put cursor on a line, hit Control+Enter)</li>
-<li>Follow along with the score.</li>
+<li>Run it line by line (place cursor on a line, hit Control+Enter, move to next line, etc.)</li>
+<li>Play the piece on the MIDI keyboard (electronic part has its own staff in the score).</li>
 </ul>
 
-<h2>
-<a id="midi-mapping" class="anchor" href="#midi-mapping" aria-hidden="true"><span class="octicon octicon-link"></span></a>MIDI mapping</h2>
+<blockquote>
+<p>Note: if using SuperCollider on a Mac, use Command+Enter instead of Control+Enter to evaluate the code.</p>
+</blockquote>
 
-<p>You need a standard MIDI keyboard with at least two octaves available.
-The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. Midinotes between 67 and 72 can be used for silent MIDI testing just before performance.</p>
-
-<p>In addition, your MIDI keyboard should have two knobs or faders availables for volume control.</p>
-
-<p>One of your faders/knobs (called stereoLoopOutVolume) will control the playback volume of all playback events except for the aleatoric section starting in m. 69. The other fader/knob (called monoLoopOutVolume) will control the playback volume of the loops in the aleatoric section (mm. 69-86).</p>
-
-<p>Use the file Il-Bianco-MIDI-CC-Numbers.scd to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard. Then open the file Il-Bianco-MIDI.scd and change the relevant lines (line numbers 154 and 162) to reflect the CC numbers of the desired knob/faders.</p>
+<p>There is no need to open any other SuperCollider files or change any of the code. The only exception, to be done in advance, is the one-time mapping of your MIDI controller, as explained in the MIDI section later on this page.</p>
 
 <h2>
-<a id="microphones-routing" class="anchor" href="#microphones-routing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Microphones routing</h2>
+<a id="hardware-connections" class="anchor" href="#hardware-connections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware connections</h2>
+
+<p>Hardware connections are as follows:</p>
+
+<ul>
+<li><p>Condenser microphones are placed on mic stands forming a semi-circle. Mic cables connect into audio inputs of USB audio interface (phantom power needed).</p></li>
+<li><p>Audio interface connected to computer via USB.</p></li>
+<li><p>MIDI keyboard connected to computer via USB.</p></li>
+<li><p>Audio interface stereo output connected to mixer.</p></li>
+<li><p>Mixer main outs connected to loudspeakers.</p></li>
+<li><p>Mixer aux send connected to monitor speakers for the choir.</p></li>
+</ul>
+
+<p>In the premiere of this piece we actually used four loudspeakers for the audience: a stereo pair right in front of the conductor, and a mirror stereo pair placed on the far left and far right of the stage.</p>
+
+<p><img src="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/il-bianco-set-up-diagram.png" alt="setup"></p>
+
+<h2>
+<a id="midi-keyboard" class="anchor" href="#midi-keyboard" aria-hidden="true"><span class="octicon octicon-link"></span></a>MIDI keyboard</h2>
+
+<p>You need a standard MIDI keyboard with at least two octaves available, and with a couple of faders or knobs.</p>
+
+<p>This section assumes the electronic musician will have common knowledge of MIDI. The only action required is to customize the <strong>Il-Bianco-MIDI.scd</strong> file with the correct control numbers assigned to your faders (or knobs), as explained in the CC mapping section below.</p>
+
+<h4>
+<a id="midinote-mapping-piano-keyboard" class="anchor" href="#midinote-mapping-piano-keyboard" aria-hidden="true"><span class="octicon octicon-link"></span></a>Midinote mapping (piano keyboard)</h4>
+
+<p>The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. MIDI notes between 67 and 72 can be used for silent MIDI testing just before performance.</p>
+
+<p><img src="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/midinote-mappings.png" alt="midimapping"></p>
+
+<h4>
+<a id="cc-mapping-fadersknobs" class="anchor" href="#cc-mapping-fadersknobs" aria-hidden="true"><span class="octicon octicon-link"></span></a>CC mapping (faders/knobs)</h4>
+
+<p>In addition, your MIDI keyboard should have two knobs or faders available for volume control.</p>
+
+<p>One of your faders/knobs (called <code>stereoLoopOutVolume</code> in the code) will control the playback volume of all playback events except for the aleatoric section starting in m. 69. The other fader/knob (called <code>monoLoopOutVolume</code>) will control the playback volume of the loops in the aleatoric section (mm. 69-86).</p>
+
+<p>You will need to find out the CC numbers of the two faders/knobs you want to use, and change these numbers in the appropriate place in the code. Here's how:</p>
+
+<ul>
+<li>Use the file <strong>Il-Bianco-MIDI-Trace.scd</strong> to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard.</li>
+<li>Open the file <strong>Il-Bianco-MIDI.scd</strong> and change the relevant lines (line numbers 159 and 167) to reflect the CC numbers of the desired knob/faders.</li>
+<li>Save the file, and you are done.</li>
+</ul>
+
+<p>For example, if you found out your faders are CC numbers 1 and 7, you would change the contents of lines 159 and 167 (the lines starting with the word <code>ccNum:</code>) to look like this:</p>
+
+<pre><code>// Stereo Loop master volume output:
+MIDIdef.cc(\stereoLoopOutVolume, {arg val;
+    ~stereoLoopMasterOutVolume.value = val/127;
+    ["main volume", val].postln;
+    },
+    ccNum: 1;
+);
+
+// Mono Loops master volume output:
+MIDIdef.cc(\monoLoopsOutVolume, {arg val;
+    ~monoLoopsMasterOutVolume.value = val/127;
+    ["aleatoric loops volume", val].postln;
+    },
+    ccNum: 7;
+);
+
+
+</code></pre>
+
+<h2>
+<a id="supercollider-code-technical-details" class="anchor" href="#supercollider-code-technical-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>SuperCollider code: technical details</h2>
+
+<p>The sections below are simply for reference. No need to read any of this unless you want to understand the SuperCollider code, make any changes or tweaks, etc.</p>
+
+<h3>
+<a id="mic-routing" class="anchor" href="#mic-routing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mic routing</h3>
+
+<p>Simply plug microphones 1 through 8 into the eight inputs of the USB audio interface. SuperCollider will take care of the proper internal routing. The tables below are just for reference.</p>
 
 <table>
 <thead>
@@ -119,8 +205,8 @@ The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording 
 </tbody>
 </table>
 
-<h2>
-<a id="supercollider-internal-routing" class="anchor" href="#supercollider-internal-routing" aria-hidden="true"><span class="octicon octicon-link"></span></a>SuperCollider internal routing</h2>
+<h3>
+<a id="supercollider-internal-routing" class="anchor" href="#supercollider-internal-routing" aria-hidden="true"><span class="octicon octicon-link"></span></a>SuperCollider internal routing</h3>
 
 <table>
 <thead>
@@ -207,12 +293,22 @@ The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Il Bianco e Dolce Cigno maintained by <a href="https://github.com/brunoruviaro">brunoruviaro</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p class="copyright">Il Bianco e Dolce Cigno... maintained by <a href="https://github.com/brunoruviaro">brunoruviaro</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-60820114-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
