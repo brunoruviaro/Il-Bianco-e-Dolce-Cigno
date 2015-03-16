@@ -33,22 +33,26 @@ Assuming everything is connected,
 * Run it line by line (place cursor on a line, hit Control+Enter, move to next line, etc.)
 * Play the piece on the MIDI keyboard (electronic part has its own staff in the score).
 
-## MIDI mapping
+## SuperCollider code: technical details
+
+The sections below are simply for reference.
+
+### MIDI mappings
 You need a standard MIDI keyboard with at least two octaves available, and with a couple of faders or knobs.
 
-### Midi notes (piano keyboard)
+![midimapping](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/midinote-mappings.png)
+
+#### Midi notes (piano keyboard)
 The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. Midinotes between 67 and 72 can be used for silent MIDI testing just before performance.
 
-### Volume faders or knobs
+#### Volume faders or knobs
 In addition, your MIDI keyboard should have two knobs or faders available for volume control.
 
 One of your faders/knobs (called stereoLoopOutVolume) will control the playback volume of all playback events except for the aleatoric section starting in m. 69. The other fader/knob (called monoLoopOutVolume) will control the playback volume of the loops in the aleatoric section (mm. 69-86).
 
 Use the file Il-Bianco-MIDI-CC-Numbers.scd to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard. Then open the file Il-Bianco-MIDI.scd and change the relevant lines (line numbers 154 and 162) to reflect the CC numbers of the desired knob/faders.
 
-## SuperCollider code: technical details
 
-The sections below are simply for reference.
 
 ### Microphones routing
 
