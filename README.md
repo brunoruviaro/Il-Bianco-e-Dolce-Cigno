@@ -9,12 +9,14 @@ To-do:
 ## About this piece
 
 Check out the score (PDF here -- add link).
+
 Check out these pictures:
+
 Check out this video recording:
 
 ## Equipment we used in 2015
 
-The brands and models in parentheses are the ones we used for performance in Winter 2015. You don't need to have the exact same equipment to run the piece; any good quality equivalent equipment will work.
+The brands and models in parentheses are the ones we used for performance in Winter 2015. You don't need to have the exact same equipment to run the piece; any good quality equivalent gear will work.
 
 * 8 cardioid condenser microphones
 * 1 eight-channel audio interface (PreSonus 1818 VSL USB)
@@ -22,7 +24,7 @@ The brands and models in parentheses are the ones we used for performance in Win
 * 1 USB MIDI keyboard controller (Alesis Q25)
 * 1 small mixer (Mackie 1202-VLZ3)
 
-## How to run the piece (brief overview)
+## How to run the piece (overview)
 
 Assuming everything is connected,
 
@@ -105,4 +107,3 @@ In other words:
 **loop6** (mono) receives sound from sopranos (microphones 1 & 2):
 
     Mix(SoundIn.ar([0, 1]);
-
