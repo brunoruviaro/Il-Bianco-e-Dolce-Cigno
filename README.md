@@ -63,7 +63,7 @@ Hardware connections are as follows:
 
 In the premiere of this piece we actually used four loudspeakers for the audience: a stereo pair right in front of the conductor, and a mirror stereo pair placed on the far left and far right of the stage.
 
-![setup](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/il-bianco-set-up-diagram.png)
+![setup](https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-set-up-diagram.png)
 
 ## MIDI keyboard
 You need a standard MIDI keyboard with at least two octaves available, and with a couple of faders or knobs.
@@ -73,7 +73,7 @@ This section assumes the electronic musician will have common knowledge of MIDI.
 #### Midinote mapping (piano keyboard)
 The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. MIDI notes between 67 and 72 can be used for silent MIDI testing just before performance.
 
-![midimapping](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/midinote-mappings.png)
+![midimapping](https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/midinote-mappings.png)
 
 #### CC mapping (faders/knobs)
 In addition, your MIDI keyboard should have two knobs or faders available for volume control.
