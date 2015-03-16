@@ -65,30 +65,31 @@ In the premiere of this piece we actually used four loudspeakers for the audienc
 
 ![setup](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/il-bianco-set-up-diagram.png)
 
-## SuperCollider code: technical details
-
-The sections below are simply for reference.
-
 ### MIDI mappings
 You need a standard MIDI keyboard with at least two octaves available, and with a couple of faders or knobs.
 
-![midimapping](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/midinote-mappings.png)
-
 #### Midi notes (piano keyboard)
-The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. Midinotes between 67 and 72 can be used for silent MIDI testing just before performance.
+The piece uses midinotes between 48 (C3) and 66 (F#4) to trigger loop recording and playback. MIDI notes between 67 and 72 can be used for silent MIDI testing just before performance.
+
+![midimapping](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/blob/gh-pages/images/midinote-mappings.png)
 
 #### Volume faders or knobs
 In addition, your MIDI keyboard should have two knobs or faders available for volume control.
 
-One of your faders/knobs (called stereoLoopOutVolume) will control the playback volume of all playback events except for the aleatoric section starting in m. 69. The other fader/knob (called monoLoopOutVolume) will control the playback volume of the loops in the aleatoric section (mm. 69-86).
+One of your faders/knobs (called `stereoLoopOutVolume` in the code) will control the playback volume of all playback events except for the aleatoric section starting in m. 69. The other fader/knob (called `monoLoopOutVolume`) will control the playback volume of the loops in the aleatoric section (mm. 69-86).
 
-Use the file Il-Bianco-MIDI-CC-Numbers.scd to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard. Then open the file Il-Bianco-MIDI.scd and change the relevant lines (line numbers 154 and 162) to reflect the CC numbers of the desired knob/faders.
+#### MIDI Tracer
+Use the file Il-Bianco-MIDI-Trace.scd to find out the Continuous Control Number (CC number) of each knob/fader available on your MIDI keyboard. Then open the file Il-Bianco-MIDI.scd and change the relevant lines (line numbers 154 and 162) to reflect the CC numbers of the desired knob/faders.
 
 
 
-### Microphones routing
+## SuperCollider code: technical details
 
-Simply plug microphones 1 through 8 into the eight inputs of the USB audio interface. SuperCollider will take care of the proper internal routing. The tables below are just for reference; no action needed.
+The sections below are simply for reference. No need to read any of this unless you want to understand the SuperCollider code, make any changes or tweaks, etc.
+
+### Mic routing
+
+Simply plug microphones 1 through 8 into the eight inputs of the USB audio interface. SuperCollider will take care of the proper internal routing. The tables below are just for reference.
 
 | Microphone | SuperCollider Input |
 | ---------- | ------------------- |
