@@ -1,12 +1,15 @@
-# Il-Bianco-e-Dolce-Cigno
-Piece for choir and live looping by Scot Hanna-Weir (based on Arcadelt). Electronics by Bruno Ruviaro.
+# Il Bianco e Dolce Cigno... e Dolce Cigno
+Piece for choir and live looping by Scot Hanna-Weir, electronics by Bruno Ruviaro.
 
 To-do:
 
 * update PDFs score and midi mappings to include in repo
 * Make a nice clean version of Jeff's drawing (hardware connections diagram)
+* specify license?
 
 ## About this piece
+
+This is a composition for choir and live looping based on Jacques Arcadelt's madrigal *Il Bianco e Dolce Cigno*. The voices of the choir are recorded and played back live, in effect creating a second, virtual choir accompanying the real choir. One electronic musician triggers the electronic parts from a MIDI keyboard, following the score.
 
 Check out the score (PDF here -- add link).
 
@@ -14,24 +17,51 @@ Check out these pictures:
 
 Check out this video recording:
 
-## Equipment we used in 2015
+This page provides all the information needed to perform this piece. Score and electronic files are released under a XYZABC license ... ?
 
-The brands and models in parentheses are the ones we used for performance in Winter 2015. You don't need to have the exact same equipment to run the piece; any good quality equivalent gear will work.
+## Equipment
+
+The list below specifies what electronic equipment is needed to perform the piece.  [SuperCollider](http://supercollider.sourceforge.net/downloads/), the software used for recording and playback, runs on all major platforms (Mac, Windows, Linux).
 
 * 8 cardioid condenser microphones
-* 1 eight-channel audio interface (PreSonus 1818 VSL USB)
-* 1 laptop running SuperCollider (Ubuntu Linux, SuperCollider 3.6.6)
-* 1 USB MIDI keyboard controller (Alesis Q25)
-* 1 small mixer (Mackie 1202-VLZ3)
+* 1 eight-channel audio interface
+* 1 laptop running [SuperCollider](http://supercollider.sourceforge.net/downloads/)
+* 1 USB MIDI keyboard controller
+* 1 small mixer
+* 2 main loudspeakers (minimum)
+* 2 monitor speakers for choir
+
+These are the brands and models we used in concert (Winter 2015): PreSonus 1818 VSL USB Audio Interface; Dell laptop running Ubuntu Linux 14.04 and SuperCollider 3.6.6; Alesis Q25 MIDI Keyboard; Mackie Mixer 1202-VLZ3; three pairs of QSC K10 loudspeakers (one pair as monitors for choir, two stereo pairs as main PA system).
+
+You don't need to have the exact same equipment to run the piece; any good quality equivalent gear should work.
 
 ## How to run the piece (overview)
 
-Assuming everything is connected,
+Once everything is connected and working, the electronic musician follows these simple steps in order to perform the piece:
 
 * Open the SuperCollider IDE
 * Open the file Il-Bianco-Player.scd
 * Run it line by line (place cursor on a line, hit Control+Enter, move to next line, etc.)
 * Play the piece on the MIDI keyboard (electronic part has its own staff in the score).
+
+>Note: if using SuperCollider on a Mac, use Command+Enter instead of Control+Enter to evaluate the code.
+
+
+## Connections
+
+Hardware connections are as follows:
+
+* Condenser microphones are placed on mic stands forming a semi-circle. Mic cables connect into audio inputs of USB audio interface (phantom power needed).
+
+* Audio interface connected to computer via USB.
+
+* Audio interface stereo output connected to mixer.
+
+* Mixer main outs connected to loudspeakers.
+
+* Mixer aux send connected to monitor speakers for the choir.
+
+In the premiere of this piece we actually used four loudspeakers for the audience: a stereo pair right in front of the conductor, and a mirror stereo pair placed on the far left and far right of the stage.
 
 ## SuperCollider code: technical details
 
