@@ -143,7 +143,7 @@ Simply plug microphones 1 through 8 into the eight inputs of the USB audio inter
 
 In other words:
 
-**loop0** and **loop7** (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Loop 7 is for overdub section (bar 52). Code:
+**loop0** and **loop7** (stereo) receive sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Loop 7 is for overdub section (bar 52). Code:
 
     Splay.ar(SoundIn.ar([0, 1, 2, 3, 4, 5, 6, 7]));
 
