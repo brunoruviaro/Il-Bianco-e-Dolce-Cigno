@@ -8,9 +8,7 @@ Piece for choir and live looping by Scot Hanna-Weir. Electronics by Bruno Ruviar
 
 This is a composition for choir and live looping based on Jacques Arcadelt's madrigal *Il Bianco e Dolce Cigno*. The voices of the choir are recorded and played back live, in effect creating a second, virtual choir accompanying the real choir. One electronic musician triggers the electronic parts from a MIDI keyboard, following the score. Care should be taken in correctly balancing the timbre and volume of the recorded choir to match the live choir as closely as possible. In an ideal sound setup, the two ensembles would be virtually indistinguishable.
 
-Check out the score (PDF here -- add link).
-
-Check out these pictures:
+Check out the score (PDF [here](https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/raw/master/Il-Bianco-SCORE.pdf)).
 
 Check out this video recording:
 
@@ -64,6 +62,15 @@ Hardware connections are as follows:
 In the premiere of this piece we actually used four loudspeakers for the audience: a stereo pair right in front of the conductor, and a mirror stereo pair placed on the far left and far right of the stage. In practice, while the diagram below shows the mixer on the table on stage with the performers, it may be easier to monitor levels by having an additonal person manage the mixer from the house.
 
 ![setup](https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-set-up-diagram.png)
+
+Here are some pictures of the set-up (loudspeakers were not yet in place):
+
+![setuppic1](https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-full.jpg)
+
+![setuppic2](https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-mics.jpg)
+
+![setuppic3](https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-electronics-no-mixer.jpg)
+
 
 ## MIDI keyboard
 You need a standard MIDI keyboard with at least two octaves available, and with a couple of faders or knobs.
