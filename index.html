@@ -36,13 +36,14 @@
 <h2>
 <a id="about-this-piece" class="anchor" href="#about-this-piece" aria-hidden="true"><span class="octicon octicon-link"></span></a>About this piece</h2>
 
-<p><em>Il Bianco e Dolce Cigno... e Dolce Cigno...</em> is a composition for choir and live looping based on Jacques Arcadelt's madrigal <em>Il Bianco e Dolce Cigno</em>. The voices of the choir are recorded and played back live, in effect creating a second, virtual choir accompanying the real choir. One electronic musician triggers the electronic parts from a MIDI keyboard, following the score.</p>
+<p><em>Il Bianco e Dolce Cigno... e Dolce Cigno...</em> is a composition for choir and live looping based on Jacques Arcadelt's madrigal <em>Il Bianco e Dolce Cigno</em>. The voices of the choir are recorded and played back live, in effect creating a second, virtual choir accompanying the real choir. One electronic musician triggers the electronic parts from a MIDI keyboard, following the score. Scot Hanna-Weir created the concept and composed the full score. Bruno Ruviaro realized the electronics. First performance was on January 29, 2015, at <a href="http://www.scu.edu/music/">Santa Clara University</a>. Scot conducted the SCU Chamber Singers, and Bruno performed the electronic part.</p>
 
-<p>Scot Hanna-Weir created the concept and composed the full score. Bruno Ruviaro realized the electronics. First performance was on January 29, 2015, at <a href="http://www.scu.edu/music/">Santa Clara University</a>. Scot conducted the SCU Chamber Singers, and Bruno performed the electronic part.</p>
+<h2>
+<a id="about-this-piece-1" class="anchor" href="#about-this-piece-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>About this piece</h2>
 
-<p>Check out the score (PDF here -- add link).</p>
+<p>This is a composition for choir and live looping based on Jacques Arcadelt's madrigal <em>Il Bianco e Dolce Cigno</em>. The voices of the choir are recorded and played back live, in effect creating a second, virtual choir accompanying the real choir. One electronic musician triggers the electronic parts from a MIDI keyboard, following the score. Care should be taken in correctly balancing the timbre and volume of the recorded choir to match the live choir as closely as possible. In an ideal sound setup, the two ensembles would be virtually indistinguishable.</p>
 
-<p>Check out these pictures:</p>
+<p>Check out the score <a href="https://github.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/raw/master/Il-Bianco-SCORE.pdf">here</a>.</p>
 
 <p>Check out this video recording:</p>
 
@@ -100,9 +101,17 @@
 <li><p>Mixer aux send connected to monitor speakers for the choir.</p></li>
 </ul>
 
-<p>In the premiere of this piece we actually used four loudspeakers for the audience: a stereo pair right in front of the conductor, and a mirror stereo pair placed on the far left and far right of the stage.</p>
+<p>In the premiere of this piece we actually used four loudspeakers for the audience: a stereo pair right in front of the conductor, and a mirror stereo pair placed on the far left and far right of the stage. In practice, while the diagram below shows the mixer on the table on stage with the performers, it may be easier to monitor levels by having an additonal person manage the mixer from the house.</p>
 
 <p><img src="https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-set-up-diagram.png" alt="setup"></p>
+
+<p>Here are some pictures of the set-up (loudspeakers were not yet in place):</p>
+
+<p><img src="https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-full.jpg" alt="setuppic1"></p>
+
+<p><img src="https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-mics.jpg" alt="setuppic2"></p>
+
+<p><img src="https://raw.githubusercontent.com/brunoruviaro/Il-Bianco-e-Dolce-Cigno/gh-pages/images/il-bianco-electronics-no-mixer.jpg" alt="setuppic3"></p>
 
 <h2>
 <a id="midi-keyboard" class="anchor" href="#midi-keyboard" aria-hidden="true"><span class="octicon octicon-link"></span></a>MIDI keyboard</h2>
@@ -255,7 +264,7 @@ MIDIdef.cc(\monoLoopsOutVolume, {arg val;
 
 <p>In other words:</p>
 
-<p><strong>loop0</strong> and <strong>loop7</strong> (stereo) receives sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Loop 7 is for overdub section (bar 52). Code:</p>
+<p><strong>loop0</strong> and <strong>loop7</strong> (stereo) receive sound from all microphones, panned evenly across the stereo field. Soprano mics to the left, bass mics to the right. Loop 7 is for overdub section (bar 52). Code:</p>
 
 <pre><code>Splay.ar(SoundIn.ar([0, 1, 2, 3, 4, 5, 6, 7]));
 </code></pre>
