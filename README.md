@@ -1,4 +1,4 @@
-Piece for choir and live looping by Scot Hanna-Weir. Electronics by Bruno Ruviaro.
+Piece for choir and live looping by Scot Hanna-Weir. Electronics by Bruno T. Ruviaro.
 
 ## About this piece
 
